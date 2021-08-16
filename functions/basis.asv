@@ -1,0 +1,20 @@
+
+
+function c=basis(n,k,sigma,q)
+
+
+%centers
+qix=10*rand(1,n);
+qiy=10*rand(1,n);
+
+C=[];
+
+for j=1:n
+    qi=[qix(j) qiy(j)];
+    c(j)=k*exp(-(norm(q-qi))^2/(2*sigma^2));%basis(qx,qy,k,[qix(j), qiy(j)],sigma);
+    C=[C c(j)];
+ end
+
+
+
+
